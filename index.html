@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+        <div class="logo">PokéApp</div>
+        <div class="nav-links">
+            <button id="btn-home" class="nav-item">Inicio</button>
+            <button id="btn-play-nav" class="nav-item highlight">Jugar Ahora</button>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Pokédex</h1>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Buscar por nombre o número..." autocomplete="off">
+                <select id="generation-filter" class="elegant-select">
+                    <option value="all">Todas las generaciones</option>
+                    <option value="1">Gen 1: Kanto</option>
+                    <option value="2">Gen 2: Johto</option>
+                    <option value="3">Gen 3: Hoenn</option>
+                    <option value="4">Gen 4: Sinnoh</option>
+                    <option value="5">Gen 5: Unova</option>
+                    <option value="6">Gen 6: Kalos</option>
+                    <option value="7">Gen 7: Alola</option>
+                    <option value="8">Gen 8: Galar</option>
+                    <option value="9">Gen 9: Paldea</option>
+                </select>
+            </div>
+        </header>
+
+        <main id="pokedex-grid" class="grid-container">
+            </main>
+
+        <div class="pagination-container">
+            <button id="load-more" class="btn-elegant">Cargar más Pokémon</button>
+        </div>
+        <p id="not-found-message" style="text-align: center; color: red; display: none;">No se encontró ese Pokémon.</p>
+    </div>
+
+    <div id="pokemon-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <span class="modal-id">#000</span>
+                <h2 class="modal-name">Nombre</h2>
+                <div class="modal-types"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Pokemon">
+                </div>
+                <div class="modal-info">
+                    <div class="data-row">
+                        <div><strong>Altura:</strong> <span id="modal-height"></span> m</div>
+                        <div><strong>Peso:</strong> <span id="modal-weight"></span> kg</div>
+                    </div>
+                    <div class="section-title">Debilidades</div>
+                    <div id="modal-weaknesses" class="weakness-container"></div>
+                    <div class="section-title">Estadísticas</div>
+                    <div id="modal-stats" class="stats-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-modal" class="modal-overlay">
+        <div class="game-content">
+            <span class="close-game">&times;</span>
+            
+            <div id="game-screen" class="battle-arena">
+                <div class="fighter-card" id="player-card">
+                    <h3 class="fighter-name">Tú</h3>
+                    <div class="img-container">
+                        <img id="player-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Player">
+                    </div>
+                    <p class="fighter-stat" id="player-stat-val">???</p>
+                </div>
+
+                <div class="battle-controls">
+                    <h1 class="vs-text">VS</h1>
+                    <div id="battle-result" class="battle-result"></div>
+                    <button id="start-battle-btn" class="btn-elegant battle-btn">¡LUCHAR!</button>
+                    <p id="battle-log" class="battle-log">Presiona para iniciar</p>
+                </div>
+
+                <div class="fighter-card" id="cpu-card">
+                    <h3 class="fighter-name">Rival</h3>
+                    <div class="img-container">
+                        <img id="cpu-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="CPU">
+                    </div>
+                    <p class="fighter-stat" id="cpu-stat-val">???</p>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div id="play-btn" class="pokeball-btn">
+        <div class="pokeball-top"></div>
+        <div class="pokeball-bottom"></div>
+        <div class="pokeball-center"></div>
+    </div>
+<footer class="main-footer">
+        <div class="footer-content">
+            <p>Desarrollado por <strong>Yaruby Lara y Luis Palacio</strong></p>
+            <p>Universidad Tecnológica de Aguascalientes</p>
+            <div class="social-links">
+                <span>&copy; 2025 Proyecto Final Pokedex</span>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
