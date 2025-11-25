@@ -9,7 +9,10 @@
 </head>
 <body>
 <nav class="navbar">
-        <div class="logo">PokéApp</div>
+        <div class="logo">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png" alt="Logo" style="height: 70px; vertical-align: middle; margin-right: 10px;">
+    <span>PokéDex</span>
+</div>
         <div class="nav-links">
             <button id="btn-home" class="nav-item">Inicio</button>
             <button id="btn-play-nav" class="nav-item highlight">Jugar Ahora</button>
@@ -17,30 +20,54 @@
     </nav>
     <div class="container">
         <header>
-            <h1>Pokédex</h1>
-            <div class="search-container">
-                <input type="text" id="search" placeholder="Buscar por nombre o número..." autocomplete="off">
-                <select id="generation-filter" class="elegant-select">
-                    <option value="all">Todas las generaciones</option>
-                    <option value="1">Gen 1: Kanto</option>
-                    <option value="2">Gen 2: Johto</option>
-                    <option value="3">Gen 3: Hoenn</option>
-                    <option value="4">Gen 4: Sinnoh</option>
-                    <option value="5">Gen 5: Unova</option>
-                    <option value="6">Gen 6: Kalos</option>
-                    <option value="7">Gen 7: Alola</option>
-                    <option value="8">Gen 8: Galar</option>
-                    <option value="9">Gen 9: Paldea</option>
-                </select>
-            </div>
-        </header>
+    <h1>Pokédex</h1>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar..." autocomplete="off">
+        
+        <select id="generation-filter" class="elegant-select">
+            <option value="all">Todas las gens</option>
+            <option value="1">Gen 1: Kanto</option>
+            <option value="2">Gen 2: Johto</option>
+            <option value="3">Gen 3: Hoenn</option>
+            <option value="4">Gen 4: Sinnoh</option>
+            <option value="5">Gen 5: Unova</option>
+            <option value="6">Gen 6: Kalos</option>
+            <option value="7">Gen 7: Alola</option>
+            <option value="8">Gen 8: Galar</option>
+            <option value="9">Gen 9: Paldea</option>
+        </select>
+
+        <select id="type-filter" class="elegant-select">
+            <option value="all">Todos los tipos</option>
+            <option value="fire">Fuego</option>
+            <option value="water">Agua</option>
+            <option value="grass">Planta</option>
+            <option value="electric">Eléctrico</option>
+            <option value="ice">Hielo</option>
+            <option value="fighting">Lucha</option>
+            <option value="poison">Veneno</option>
+            <option value="ground">Tierra</option>
+            <option value="flying">Volador</option>
+            <option value="psychic">Psíquico</option>
+            <option value="bug">Bicho</option>
+            <option value="rock">Roca</option>
+            <option value="ghost">Fantasma</option>
+            <option value="dragon">Dragón</option>
+            <option value="steel">Acero</option>
+            <option value="fairy">Hada</option>
+            <option value="dark">Siniestro</option>
+        </select>
+    </div>
+</header>
 
         <main id="pokedex-grid" class="grid-container">
             </main>
 
-        <div class="pagination-container">
-            <button id="load-more" class="btn-elegant">Cargar más Pokémon</button>
-        </div>
+<div class="pagination-container" style="gap: 20px;">
+    <button id="btn-prev" class="btn-elegant" disabled>Anterior</button>
+    <span id="page-info" style="font-weight: bold; color: var(--text-secondary);">Página 1</span>
+    <button id="btn-next" class="btn-elegant">Siguiente</button>
+</div>
         <p id="not-found-message" style="text-align: center; color: red; display: none;">No se encontró ese Pokémon.</p>
     </div>
 
@@ -106,6 +133,7 @@
         <div class="pokeball-bottom"></div>
         <div class="pokeball-center"></div>
     </div>
+    <button id="btn-scroll-top" class="scroll-top-btn" title="Ir arriba">↑</button>
 <footer class="main-footer">
         <div class="footer-content">
             <p>Desarrollado por <strong>Yaruby Lara y Luis Palacio</strong></p>

@@ -1,10 +1,18 @@
 :root {
-    --bg-color: #f4f6f8;
-    --card-bg: #ffffff;
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
-    --accent-color: #FF5252; 
-    --shadow: 0 10px 20px rgba(0,0,0,0.05);
+    --bg-color: #1a1a2e; 
+    --card-bg: #16213e;
+    --text-primary: #e94560;
+    --text-secondary: #bdc3c7; 
+    --accent-color: #e94560; 
+    --shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+body {
+    color: white;
+}
+
+.navbar {
+    background-color: #0f3460;
 }
 
 * {
@@ -171,7 +179,7 @@ input:focus, select:hover {
 .modal-overlay.active { opacity: 1; }
 
 .modal-content, .game-content {
-    background: white;
+    background: 1213;
     width: 90%;
     max-width: 800px;
     border-radius: 25px;
@@ -204,7 +212,7 @@ input:focus, select:hover {
 .modal-img-container {
     flex: 1; min-width: 250px;
     display: flex; justify-content: center; align-items: center;
-    background: #f4f6f8; border-radius: 20px; padding: 20px;
+    background: #1a1a2e; border-radius: 20px; padding: 20px;
 }
 #modal-img { width: 100%; max-width: 250px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
 .modal-info { flex: 1.5; min-width: 250px; }
@@ -272,7 +280,7 @@ input:focus, select:hover {
 
 /* --- NAVBAR SUPERIOR --- */
 .navbar {
-    background-color: var(--text-primary); 
+    background-color: var(123123123); 
     color: white;
     padding: 15px 40px;
     display: flex;
@@ -308,7 +316,7 @@ input:focus, select:hover {
 }
 
 .nav-item:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(0, 238, 255, 0.1);
 }
 
 .nav-item.highlight {
@@ -317,7 +325,7 @@ input:focus, select:hover {
 }
 
 .nav-item.highlight:hover {
-    background-color: #ff3b3b;
+    background-color: #ee0303;
     transform: translateY(-2px);
 }
 
@@ -437,4 +445,36 @@ input:focus, select:hover {
     body {
         padding-bottom: 120px;
     }
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; 
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    opacity: 0; 
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none; 
+    z-index: 1000;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    background-color: #ff3b3b;
+}
+.elegant-select {
+    min-width: 150px;
+    text-align: center;
 }
